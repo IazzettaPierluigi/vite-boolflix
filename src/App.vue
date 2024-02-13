@@ -32,7 +32,14 @@ export default {
     requestFilm() {
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=402df4d041174a1c48401bf733b62e8d&query=${store.searchText}`).then((res) => {
         console.log(res.data)
-        store.filmsArray = res.data
+        store.filmsArray += res.data
+      })
+    },
+
+    requestTv() {
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=402df4d041174a1c48401bf733b62e8d&query=${store.searchText}`).then((res) => {
+        console.log(res.data)
+        store.filmsArray += res.data
       })
     }
   },
@@ -40,7 +47,7 @@ export default {
 </script>
 
 <template>
-  <HeaderApp @performSearch="requestFilm" />
+  <HeaderApp @performSearch="requestFilm, requestTv" />
   <FilmsList />
 </template>
 

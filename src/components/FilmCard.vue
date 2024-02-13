@@ -17,9 +17,7 @@ export default {
 
     },
     methods: {
-        changeFlag() {
 
-        }
     },
 };
 </script>
@@ -35,6 +33,8 @@ export default {
             <!-- facciamo if per far comparire l'immagine della bandiera inglese al posto della scritta en -->
             <img v-if="propsElement.original_language === 'en'" src="../assets/img/united-kingdom.png" alt="">
             <img v-else-if="propsElement.original_language === 'fr'" src="../assets/img/france.png" alt="">
+            <img v-else-if="propsElement.original_language === 'it'" src="../assets/img/italy.png" alt="">
+            <img v-else-if="propsElement.original_language === 'de'" src="../assets/img/germany.png" alt="">
             <h5 v-else class="fs-6">{{ propsElement.original_language }}</h5>
         </div>
     </div>
