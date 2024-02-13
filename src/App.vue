@@ -41,13 +41,18 @@ export default {
         console.log(res.data)
         store.filmsArray += res.data
       })
+    },
+
+    onSearch() {
+      this.requestTv();
+      this.requestFilm();
     }
   },
 };
 </script>
 
 <template>
-  <HeaderApp @performSearch="requestFilm, requestTv" />
+  <HeaderApp @performSearch="onSearch" />
   <FilmsList />
 </template>
 
