@@ -1,4 +1,9 @@
 <script>
+//import store
+import { store } from "../store";
+
+//import axios per chiamata api e modifica
+import axios from 'axios';
 export default {
 
     name: "HeaderApp",
@@ -6,7 +11,7 @@ export default {
 
     data() {
         return {
-
+            store
         };
     },
     created() {
@@ -25,9 +30,11 @@ export default {
                 <h1 class="w-100 text-danger   ">boolflix</h1>
             </div>
             <div class="col-3 p-3   ">
-                <div class=" justify-content-center">
+                <div class=" justify-content-center d-flex">
 
-                    <input type="text" class="form-control" id="" placeholder="Cerca un film..">
+                    <input type="text" class="form-control w-50 me-2 " id="" placeholder="Cerca un film.."
+                        v-model="store.searchText">
+                    <button type="button" class="btn btn-danger" @click.prevent="$emit('performSearch')">Cerca</button>
                 </div>
 
             </div>

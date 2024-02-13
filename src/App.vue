@@ -24,13 +24,18 @@ export default {
 
   },
   methods: {
-
+    //chiamata api onclick
+    requestFilm() {
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=402df4d041174a1c48401bf733b62e8d&query=${store.searchText}`).then((res) => {
+        console.log(res.data)
+      })
+    }
   },
 };
 </script>
 
 <template>
-  <HeaderApp />
+  <HeaderApp @performSearch="requestFilm" />
   <FilmsList />
 </template>
 
