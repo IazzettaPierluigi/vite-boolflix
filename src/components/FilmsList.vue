@@ -30,7 +30,7 @@ export default {
     <div class="container-fluid ">
         <div class="row d-flex  mt-3 p-4">
 
-            <FilmCard v-for="(element, index) in store.filmsArray.results" :key="index" :propsElement="element" />
+            <FilmCard v-for="(element, index) in store.filmsArray" :key="index" :propsElement="element" />
         </div>
     </div>
 </template>

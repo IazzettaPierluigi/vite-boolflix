@@ -30,18 +30,27 @@ export default {
   methods: {
     //chiamata api onclick
     requestFilm() {
+
+      if (this.store.filmsArray.length > 0) {
+        this.store.filmsArray = []
+      }
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=402df4d041174a1c48401bf733b62e8d&query=${store.searchText}`).then((res) => {
-        console.log(res.data)
-        store.filmsArray += res.data
+
+        console.log("Risultati dei film:", res.data.results);
+        store.filmsArray.push(...res.data.results);
       })
     },
 
     requestTv() {
+      if (this.store.filmsArray.length > 0) {
+        this.store.filmsArray = []
+      }
       axios.get(`https://api.themoviedb.org/3/search/tv?api_key=402df4d041174a1c48401bf733b62e8d&query=${store.searchText}`).then((res) => {
-        console.log(res.data)
-        store.filmsArray += res.data
+        console.log("Risultati delle serie:", res.data.results)
+        store.filmsArray.push(...res.data.results);
       })
     },
+
 
     onSearch() {
       this.requestTv();
