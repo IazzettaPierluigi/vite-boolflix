@@ -2,6 +2,8 @@
 import { store } from "../store"
 
 import FilmCard from "./FilmCard.vue"
+
+import SerieCard from "./SerieCard.vue"
 export default {
 
     name: "FilmsList",
@@ -10,6 +12,7 @@ export default {
 
     components: {
         FilmCard,
+        SerieCard,
     },
 
     data() {
@@ -30,7 +33,10 @@ export default {
     <div class="container-fluid ">
         <div class="row d-flex  mt-3 p-4">
 
-            <FilmCard v-for="(element, index) in store.filmsArray" :key="index" :propsElement="element" />
+            <FilmCard v-for="(element, index) in store.filmsArray" :key="index" :propsElement="element"
+                :propImg="element.poster_path" />
+            <SerieCard v-for="(element2, index) in store.serieArray" :key="index" :propsElement2="element2"
+                :propImg2="element2.poster_path" />
         </div>
     </div>
 </template>

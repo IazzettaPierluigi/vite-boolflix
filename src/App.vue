@@ -13,6 +13,9 @@ import FilmsList from "./components/FilmsList.vue"
 //import filmcard
 import FilmCard from "./components/FilmCard.vue"
 
+//import seriecard
+import SerieCard from "./components/SerieCard.vue"
+
 export default {
   components: {
     HeaderApp,
@@ -37,17 +40,17 @@ export default {
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=402df4d041174a1c48401bf733b62e8d&query=${store.searchText}`).then((res) => {
 
         console.log("Risultati dei film:", res.data.results);
-        store.filmsArray.push(...res.data.results);
+        this.store.filmsArray.push(...res.data.results);
       })
     },
 
     requestTv() {
-      if (this.store.filmsArray.length > 0) {
-        this.store.filmsArray = []
+      if (this.store.serieArray.length > 0) {
+        this.store.serieArray = []
       }
       axios.get(`https://api.themoviedb.org/3/search/tv?api_key=402df4d041174a1c48401bf733b62e8d&query=${store.searchText}`).then((res) => {
         console.log("Risultati delle serie:", res.data.results)
-        store.filmsArray.push(...res.data.results);
+        this.store.serieArray.push(...res.data.results);
       })
     },
 
