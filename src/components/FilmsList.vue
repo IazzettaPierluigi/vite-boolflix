@@ -31,7 +31,7 @@ export default {
 
 <template>
     <div class="container-fluid ">
-        <div class="row d-flex  mt-3 p-4">
+        <div class="row d-flex  mt-3 p-4 gap-3 ">
 
             <FilmCard v-for="(element, index) in store.filmsArray" :key="index" :propsElement="element"
                 :propImg="element.poster_path" />
