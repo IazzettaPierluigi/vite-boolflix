@@ -6,7 +6,8 @@ export default {
 
     props: [
         "propsElement2",
-        "propImg2"
+        "propImg2",
+        "propVote2",
     ],
 
     data() {
@@ -33,7 +34,8 @@ export default {
 
                 <h1 class="card-title ">{{ propsElement2.name }}</h1>
                 <h3 class="card-subtitle text-body-secondary fs-4">{{ propsElement2.original_name }}</h3>
-                <h4 class="fs-5">{{ propsElement2.vote_average }}</h4>
+                <!-- <h4 class="fs-5">{{ propsElement2.vote_average }}</h4> -->
+                <i class="fa-solid fa-star" v-for="(element, index) in Math.ceil(propVote2 / 2)" :key="index"></i>
 
                 <!-- facciamo if per far comparire l'immagine della bandiera inglese al posto della scritta en -->
                 <img class="nation" v-if="propsElement2.original_language === 'en'" src="../assets/img/united-kingdom.png"

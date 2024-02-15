@@ -7,6 +7,7 @@ export default {
     props: [
         "propsElement",
         "propImg",
+        "propVote",
     ],
 
     data() {
@@ -33,18 +34,28 @@ export default {
 
                 <h1 class="card-title">{{ propsElement.title }}</h1>
                 <h3 class="card-subtitle text-body-secondary fs-5">{{ propsElement.original_title }}</h3>
-                <h4 class="fs-5">{{ propsElement.vote_average }}</h4>
+                <!-- <h4 class="fs-5">{{ propsElement.vote_average }}</h4> -->
+                <span>
+                    <!-- stars piene -->
+                    <i class="fa-solid fa-star" v-for="(element, index) in Math.ceil(propVote / 2)" :key="index"></i>
 
+                    <!-- stars vuote -->
+                    <i class="fa-regular fa-star" v-for="(element, index) in (5 - Math.ceil(propVote / 2))"
+                        :key="index"></i>
+                </span>
 
-                <img class="nation" v-if="propsElement.original_language === 'en'" src="../assets/img/united-kingdom.png"
-                    alt="">
-                <img class="nation" v-else-if="propsElement.original_language === 'fr'" src="../assets/img/france.png"
-                    alt="">
-                <img class="nation" v-else-if="propsElement.original_language === 'it'" src="../assets/img/italy.png"
-                    alt="">
-                <img class="nation" v-else-if="propsElement.original_language === 'de'" src="../assets/img/germany.png"
-                    alt="">
-                <h5 v-else class="fs-6">{{ propsElement.original_language }}</h5>
+                <div>
+
+                    <img class="nation" v-if="propsElement.original_language === 'en'"
+                        src="../assets/img/united-kingdom.png" alt="">
+                    <img class="nation" v-else-if="propsElement.original_language === 'fr'" src="../assets/img/france.png"
+                        alt="">
+                    <img class="nation" v-else-if="propsElement.original_language === 'it'" src="../assets/img/italy.png"
+                        alt="">
+                    <img class="nation" v-else-if="propsElement.original_language === 'de'" src="../assets/img/germany.png"
+                        alt="">
+                    <h5 v-else class="fs-6">{{ propsElement.original_language }}</h5>
+                </div>
             </div>
         </div>
     </div>
@@ -82,6 +93,8 @@ export default {
             bottom: 10px;
 
             display: none;
+            display: flex;
+            flex-direction: row;
 
             h1 {
                 font-size: 20px;

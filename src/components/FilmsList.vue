@@ -34,9 +34,10 @@ export default {
         <div class="row d-flex  mt-3 p-4 gap-3 ">
 
             <FilmCard v-for="(element, index) in store.filmsArray" :key="index" :propsElement="element"
-                :propImg="element.poster_path" />
+                :propImg="element.poster_path" :propVote="element.vote_average" />
+
             <SerieCard v-for="(element2, index) in store.serieArray" :key="index" :propsElement2="element2"
-                :propImg2="element2.poster_path" />
+                :propImg2="element2.poster_path" :propVote2="element2.vote_average" />
         </div>
     </div>
 </template>
