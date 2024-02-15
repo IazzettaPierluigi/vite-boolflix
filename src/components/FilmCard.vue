@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-    <div class="col-2 text-center mb-3 card  p-0">
+    <div class="col-2 text-center mb-3 card p-0">
         <div class="card-body p-0">
             <figure>
                 <img :src="`https://image.tmdb.org/t/p/w342/${propImg}`" alt="">
@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss">
 .card {
-    position: relative;
+
 
 
     &:hover .card-body figure {
@@ -73,13 +73,12 @@ export default {
     }
 
     &:hover .card-body .text {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        display: block;
 
     }
 
     .card-body {
+
         position: relative;
 
         figure {
@@ -112,7 +111,7 @@ export default {
         }
 
         p {
-            font-size: 12px;
+            font-size: 14px;
 
         }
 
