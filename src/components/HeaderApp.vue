@@ -27,7 +27,10 @@ export default {
     <div class="container-fluid">
         <div class="row bg-dark justify-content-between align-items-center  ">
             <div class="col-3 justify-content-center d-flex ">
-                <h1 class="w-100 text-danger   ">boolflix</h1>
+                <a href="" class="w-100 text-decoration-none ">
+
+                    <h1 class=" text-danger   ">boolflix</h1>
+                </a>
             </div>
             <div class="col-3 p-3   ">
                 <div class=" justify-content-center d-flex">

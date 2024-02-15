@@ -32,9 +32,11 @@ export default {
             </figure>
             <div class="text">
 
-                <h1 class="card-title">{{ propsElement.title }}</h1>
-                <h3 class="card-subtitle text-body-secondary fs-5">{{ propsElement.original_title }}</h3>
+                <h1 class="px-5">{{ propsElement.title }}</h1>
+                <h3 class="px-5">{{ propsElement.original_title }}</h3>
+                <hr>
                 <!-- <h4 class="fs-5">{{ propsElement.vote_average }}</h4> -->
+                <p class="px-4">{{ propsElement.overview }}</p>
                 <span>
                     <!-- stars piene -->
                     <i class="fa-solid fa-star" v-for="(element, index) in Math.ceil(propVote / 2)" :key="index"></i>
@@ -71,7 +73,10 @@ export default {
     }
 
     &:hover .card-body .text {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
     }
 
     .card-body {
@@ -93,16 +98,22 @@ export default {
             bottom: 10px;
 
             display: none;
-            display: flex;
-            flex-direction: row;
+
 
             h1 {
                 font-size: 20px;
+                font-weight: bold;
             }
         }
 
-        h1 {
-            font-size: 20px;
+        h3 {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        p {
+            font-size: 12px;
+
         }
 
         .nation {
