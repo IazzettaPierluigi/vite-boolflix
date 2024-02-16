@@ -1,1 +1,68 @@
 @use "./variables" as *;
+
+@mixin cards-style {
+    .card {
+        position: relative;
+
+
+        &:hover .card-body figure {
+            display: none;
+        }
+
+        &:hover .card-body .text {
+            display: block;
+
+        }
+
+        .card-body {
+
+            position: relative;
+
+            figure {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .text {
+                position: absolute;
+                top: 0;
+                display: none;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+
+
+                display: none;
+
+
+                h1 {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+
+            h3 {
+                font-size: 16px;
+                opacity: 0.8;
+            }
+
+            p {
+                font-size: 20px;
+
+                span {
+                    color: red;
+                }
+            }
+
+            .nation {
+                width: 20px;
+            }
+        }
+    }
+}

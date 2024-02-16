@@ -25,18 +25,19 @@ export default {
 </script>
 
 <template>
-    <div class="col-2 text-center mb-3 card p-0">
-        <div class="card-body p-0">
+    <div class="col-2 text-center mb-3 card  border-0 ">
+        <div class="card-body p-0 border rounded-2">
             <figure>
-                <img :src="`https://image.tmdb.org/t/p/w342/${propImg}`" alt="">
+                <img :src="`https://image.tmdb.org/t/p/w342/${propImg}`" alt="" class="rounded-2">
             </figure>
             <div class="text">
 
-                <h1 class="px-5">{{ propsElement.title }}</h1>
-                <h3 class="px-5">{{ propsElement.original_title }}</h3>
+                <h1 class="card-title mt-2 ">{{ propsElement.title }}</h1>
+                <hr>
+                <h3 class="card-text">Original title: {{ propsElement.original_title }}</h3>
                 <hr>
                 <!-- <h4 class="fs-5">{{ propsElement.vote_average }}</h4> -->
-                <p class="px-4">{{ propsElement.overview }}</p>
+                <p class="px-4"><span>Trama: </span>{{ propsElement.overview }}</p>
                 <span>
                     <!-- stars piene -->
                     <i class="fa-solid fa-star" v-for="(element, index) in Math.ceil(propVote / 2)" :key="index"></i>
@@ -63,61 +64,8 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
-.card {
+<style lang="scss" scoped>
+@use "../styles/partials/mixins" as *;
 
-
-
-    &:hover .card-body figure {
-        display: none;
-    }
-
-    &:hover .card-body .text {
-        display: block;
-
-    }
-
-    .card-body {
-
-        position: relative;
-
-        figure {
-            width: 100%;
-            height: 100%;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .text {
-            position: absolute;
-            bottom: 10px;
-
-            display: none;
-
-
-            h1 {
-                font-size: 20px;
-                font-weight: bold;
-            }
-        }
-
-        h3 {
-            font-size: 16px;
-            opacity: 0.8;
-        }
-
-        p {
-            font-size: 14px;
-
-        }
-
-        .nation {
-            width: 20px;
-        }
-    }
-}
+@include cards-style;
 </style>
