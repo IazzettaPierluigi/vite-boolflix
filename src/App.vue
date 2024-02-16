@@ -68,6 +68,4 @@ export default {
   <FilmsList />
 </template>
 
-<style lang="scss">
-@use "./styles/general.scss";
-</style>
+<style lang="scss"></style>

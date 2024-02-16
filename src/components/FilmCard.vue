@@ -25,8 +25,8 @@ export default {
 </script>
 
 <template>
-    <div class="col-2 text-center mb-3 card  border-0 ">
-        <div class="card-body p-0 border rounded-2">
+    <div class="col-2 text-center mb-3 card p-0 ">
+        <div class="card-body p-0 ">
             <figure>
                 <img :src="`https://image.tmdb.org/t/p/w342/${propImg}`" alt="" class="rounded-2">
             </figure>
